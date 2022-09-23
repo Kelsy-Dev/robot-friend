@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from './Card.js';
+import CardList from './CardList'
 import 'tachyons'
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { robots } from './robots'
 
 
 
 
 ReactDOM.render(
     <div>
-    <Card />
-    <Card />
-    <Card />
+        <CardList robots={robots} />
     </div>,
     document.getElementById('root'));
 // const root = ReactDOM.createRoot(document.getElementById('root'));
