@@ -13,12 +13,21 @@ class App extends Component{
         searchfield: ''
         }
     }
+
+    searchChange = (event) => {
+        this.setState({ searchfield: event.target.value })
+        
+    }
+
     render() {
+        const filterrobots = this.state.Robots.filter(robots => {
+            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        })
     return (
         <div className="tc">
             <h1>RoboFriends</h1>
-            < Searchbox />
-            <CardList robots={ this.state.robots} />
+            < Searchbox changes={this.searchChange}/>
+            <CardList robots={ filterrobots } />
         </div>
     ); 
     }
